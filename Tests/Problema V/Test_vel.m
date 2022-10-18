@@ -9,8 +9,9 @@ e = 0.3855;
 i = 0.9528;
 OM = 2.5510;
 om = 2.2540;
+dth = 0.05;
 
-theta_vect = (0:0.05:(2*pi+0.01))';
+theta_vect = (0:dth:(2*pi+dth))';
 [rr_vect, vv_vect] = Mat_parorb2rv(a,e,i,OM,om,theta_vect, mu);          % Modified function
 
 
@@ -76,8 +77,9 @@ e = 0.3855;
 i = 0.9528;
 OM = 2.5510;
 om = 2.2540;
+dth = 0.01;
 
-theta_vect = (0:0.05:(2*pi+0.01))';
+theta_vect = (0:dth:(2*pi+dth))';
 [rr_vect, vv_vect] = Mat_parorb2rv(a,e,i,OM,om,theta_vect, mu);          % Modified function
 
 [rr_vect]=InvVel(rr_vect,a,e);
@@ -155,14 +157,14 @@ for k = t
     % Delay
     pause(0.01)
     % Saving the figure
-    frame = getframe(gcf);
-    im = frame2im(frame);
-    [imind,cm] = rgb2ind(im,256);
-    if k == 1
-        imwrite(imind,cm,filename,'gif', 'Loopcount',inf,...
-        'DelayTime',Durata_frame);
-    else
-        imwrite(imind,cm,filename,'gif','WriteMode','append',...
-        'DelayTime',Durata_frame);
-    end
+%     frame = getframe(gcf);
+%     im = frame2im(frame);
+%     [imind,cm] = rgb2ind(im,256);
+%     if k == 1
+%         imwrite(imind,cm,filename,'gif', 'Loopcount',inf,...
+%         'DelayTime',Durata_frame);
+%     else
+%         imwrite(imind,cm,filename,'gif','WriteMode','append',...
+%         'DelayTime',Durata_frame);
+%     end
 end
