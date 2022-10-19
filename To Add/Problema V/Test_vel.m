@@ -157,14 +157,14 @@ for k = t
     % Delay
     pause(0.01)
     % Saving the figure
-%     frame = getframe(gcf);
-%     im = frame2im(frame);
-%     [imind,cm] = rgb2ind(im,256);
-%     if k == 1
-%         imwrite(imind,cm,filename,'gif', 'Loopcount',inf,...
-%         'DelayTime',Durata_frame);
-%     else
-%         imwrite(imind,cm,filename,'gif','WriteMode','append',...
-%         'DelayTime',Durata_frame);
-%     end
+    frame = getframe(gcf);
+    im = frame2im(frame);
+    [imind,cm] = rgb2ind(im,256);
+    if k == 1
+        imwrite(imind,cm,filename,'gif', 'Loopcount',inf,...
+        'DelayTime',Durata_frame);
+    else
+        imwrite(imind,cm,filename,'gif','WriteMode','append',...
+        'DelayTime',Durata_frame);
+    end
 end

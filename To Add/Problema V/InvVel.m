@@ -11,10 +11,6 @@ rr_vect(:,1)=rr_vect(:,1)+distanza*angolo1;
 rr_vect(:,2)=rr_vect(:,2)+distanza*angolo2;
 rr_vect(:,3)=rr_vect(:,3)+distanza*angolo3;
 
-rr_vect(:,1)=-rr_vect(:,1);
-rr_vect(:,2)=-rr_vect(:,2);
-rr_vect(:,3)=-rr_vect(:,3);
-
-rr=rr_vect;
+rr=-rr_vect;
 
 end
