@@ -38,9 +38,9 @@ end
 plot3(rr_vect(:,1),rr_vect(:,2),rr_vect(:,3))
 hold on, grid on, grid minor
 
-theta1=1.7*pi;
-theta2=0.6*pi;
+theta1=0.7*pi;
+theta2=2.5*pi;
 
 [rr_vect_new] = semiOrb(rr_vect,theta1,theta2,a, e, i, OM, om, mu);
-plot3(rr_vect_new(:,1),rr_vect_new(:,2),rr_vect_new(:,3))
 view(120,20);
+comet3(rr_vect_new(:,1),rr_vect_new(:,2),rr_vect_new(:,3))
