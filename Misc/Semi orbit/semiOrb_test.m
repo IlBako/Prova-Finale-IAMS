@@ -38,8 +38,8 @@ end
 plot3(rr_vect(:,1),rr_vect(:,2),rr_vect(:,3))
 hold on, grid on, grid minor
 
-theta1=0.7*pi;
-theta2=2.5*pi;
+theta1=0.8*pi;
+theta2=1.6*pi;
 
 [rr_vect_new] = semiOrb(rr_vect,theta1,theta2,a, e, i, OM, om, mu);
 view(120,20);
