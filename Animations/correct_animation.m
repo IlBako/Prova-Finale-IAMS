@@ -30,7 +30,7 @@ for k=1:length(T_vect)
     theta_vect=[theta_vect; theta];
 end
 
-[rr_vect, vv_vect] = mat_parorb2rv(a,e,i,OM,om,theta_vect, mu);
+[rr_vect, vv_vect] = mat_parorb2rv(a,e,i,OM,om,theta_vect,mu);
 [rr_vect] = InvRR(rr_vect);         % fix orbit starting point
 
 x=rr_vect(:,1);
