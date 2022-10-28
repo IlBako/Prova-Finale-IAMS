@@ -1,4 +1,6 @@
 # Prova-Finale-IAMS (Test branch)
 
 ## Current known issues
-Test_vel + InvRR -> If theta_vect upper bound is greater than 2*pi, the trajectory doesn't correctly loop, but makes straight line to connect opposite points of the plot
+rv2parorb has a flaw where some angles are returned as 2pi instead of the value of acos.
+The solution is to use the if statement instead of multilying by the ocnditional variables.
+#### This solution as not yet been implemented.
