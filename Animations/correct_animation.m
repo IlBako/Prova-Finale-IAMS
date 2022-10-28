@@ -17,20 +17,12 @@ for k=1:length(T_vect)
     t=T_vect(k);
     tp=T_tot/2;
 
-    M=sqrt(mu/(a^3))*(t-tp);
-
-    f=@(x) -M+x-e*sin(x);
-    df=@(x) 1-e.*cos(x);
-
-    [xvect,~]=newton(1,100,1e-8,f,df);
-    E=xvect(end);
-
-    theta=2*atan(tan(E/2)/sqrt((1-e)/(1+e)));
+    theta = calculateTh(t, tp, mu, a, e);
 
     theta_vect=[theta_vect; theta];
 end
 
-[rr_vect, vv_vect] = mat_parorb2rv(a,e,i,OM,om,theta_vect,mu);
+[rr_vect, vv_vect] = mat_parorb2rv(a,e,i,OM,om,theta_vect, mu);
 [rr_vect] = InvRR(rr_vect);         % fix orbit starting point
 
 x=rr_vect(:,1);

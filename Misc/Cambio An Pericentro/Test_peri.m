@@ -13,7 +13,7 @@ w_f = 1.2*pi;
 theta_i = 0; % theta iniziale
 
 % orbite iniziale e voluta
-[dv, theta_3, theta_4] = CambioAnPericentro(a, e, w_i, w_f, mu);
+[dv, theta_3, theta_4, w_f2] = CambioAnPericentro(a, e, w_i, w_f, mu);
 theta_vect=linspace(0,2*pi,200)';
 [rr_i, ~] = mat_parorb2rv(a, e, i, OM, w_i, theta_vect, mu);
 [rr_f, ~] = mat_parorb2rv(a, e, i, OM, w_f, theta_vect, mu);
@@ -26,15 +26,14 @@ view(-10,-10)
 legend1=0;
 % caso con pericentri opposti e tra condizioni if
 if abs(w_f-w_i)>pi/2 && abs(w_f-w_i)<(3*pi)/2
-    w_f=w_f-pi;
-    [rr_f2, ~] = mat_parorb2rv(a, e, i, OM, w_f, theta_vect, mu);
+    [rr_f2, ~] = mat_parorb2rv(a, e, i, OM, w_f2, theta_vect, mu);
     plot3(rr_f2(:,1),rr_f2(:,2),rr_f2(:,3))
     legend1=1; % alcuni valori mancherebbero...
 end
 
 % plot punti di intersezione
-[rr_3, ~] = parorb2rv(a, e, i, OM, w_f, theta_3, mu);
-[rr_4, ~] = parorb2rv(a, e, i, OM, w_f, theta_4, mu);
+[rr_3, ~] = parorb2rv(a, e, i, OM, w_f2, theta_3, mu);
+[rr_4, ~] = parorb2rv(a, e, i, OM, w_f2, theta_4, mu);
 plot3(rr_3(1),rr_3(2),rr_3(3),'o',Color='red')
 plot3(rr_4(1),rr_4(2),rr_4(3),'o',Color='red')
 
