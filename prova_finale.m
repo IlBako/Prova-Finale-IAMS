@@ -68,3 +68,7 @@ earthPlot;
 plot3(rr_vect_1(:,1),rr_vect_1(:,2),rr_vect_1(:,3));
 plot3(rr_vect_2(:,1),rr_vect_2(:,2),rr_vect_2(:,3));
 view(120,20)
+
+[rr2, vv2] = parorb2rv(a_2,e_2,i_2,OM_2,om_2,theta,mu);
+rr2
+vv2

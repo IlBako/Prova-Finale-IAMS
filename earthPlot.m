@@ -18,7 +18,6 @@ cdata = imread(image_file);
 cdata=cdata([end:-1:1],:,:);
 set(s, 'FaceColor', 'texturemap', 'CData', cdata, 'EdgeColor', 'none');
 
-hold on
-axis equal, grid on, grid minor
+axis equal
 
 end
