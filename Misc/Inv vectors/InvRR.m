@@ -16,6 +16,7 @@ if rem(dim,2)==0
             dummy(i,:)=rr_vect(i-dim/2,:);
         end
     end
+    dummy=[dummy; dummy(1,:)];
 else
     for i=1:dim
         if i<=floor(dim/2)
